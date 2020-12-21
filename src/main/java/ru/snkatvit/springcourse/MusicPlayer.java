@@ -12,6 +12,8 @@ public class MusicPlayer {
          this.musicList.add(music);
     }
 
+
+
     public MusicPlayer() {
     }
 
