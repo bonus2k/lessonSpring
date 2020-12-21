@@ -1,28 +1,21 @@
 package ru.snkatvit.springcourse;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
+    private Music music;
     private String name;
     private int volume;
 
+    @Autowired
     public MusicPlayer(Music music) {
-         this.musicList.add(music);
+        this.music = music;
     }
 
-
-
-    public MusicPlayer() {
-    }
-
-    public void playMusic(){
-        musicList.forEach(o-> System.out.println("Playing: " + o.getSong()));
-    }
-
-    public void setMusic(List<Music> musicList) {
-        this.musicList=musicList;
+    public void playMusic() {
+        System.out.println("Playing: " + music.getSong());
     }
 
     public String getName() {

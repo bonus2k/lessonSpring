@@ -6,32 +6,5 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="musicClassic"
-          class="ru.snkatvit.springcourse.ClassicalMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy">
-    </bean>
-
-    <bean id="musicRock"
-          class="ru.snkatvit.springcourse.RockMusic"></bean>
-
-    <bean id="musicJazz"
-          class="ru.snkatvit.springcourse.JazzMusic"></bean>
-
-    <bean id="musicPlayer"
-          class="ru.snkatvit.springcourse.MusicPlayer">
-        <!--        <property name="music" ref="musicBean"/>-->
-        <!--        <property name="name" value="${musicPlayer.name}"/>-->
-        <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-        <property name="music">
-            <list>
-                <ref bean="musicRock"></ref>
-                <ref bean="musicClassic"></ref>
-                <ref bean="musicJazz"></ref>
-            </list>
-        </property>
-    </bean>
-
-
+    <context:component-scan base-package="ru.snkatvit.springcourse"/>
 </beans>
