@@ -2,18 +2,19 @@ package ru.snkatvit.springcourse;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ClassicalMusic implements Music {
+    List<String> musicList = new ArrayList<>();
+
     @Override
-    public String getSong() {
-        return "Classic music";
+    public List<String> getSong() {
+        musicList.add("Classical music1");
+        musicList.add("Classical music2");
+        musicList.add("Classical music3");
+
+        return musicList;
     }
-//
-//    public void doMyInit(){
-//        System.out.println("Init object");
-//    }
-//
-//    public void doMyDestroy(){
-//        System.out.println("Destroy object");
-//    }
 }

@@ -9,7 +9,23 @@ public class TestSpring {
 //        ClassicalMusic music = context.getBean("classicalMusic", ClassicalMusic.class);
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        musicPlayer.playMusic();
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.ROCK);
+        musicPlayer.playMusic(musicEnum.CLASSICAL);
+        musicPlayer.playMusic(musicEnum.CLASSICAL);
+        musicPlayer.playMusic(musicEnum.CLASSICAL);
+        musicPlayer.playMusic(musicEnum.CLASSICAL);
+        musicPlayer.playMusic(musicEnum.CLASSICAL);
+        musicPlayer.playMusic(musicEnum.CLASSICAL);
+        musicPlayer.playMusic(musicEnum.CLASSICAL);
+        musicPlayer.playMusic(musicEnum.CLASSICAL);
 
         context.close();
 
