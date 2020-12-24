@@ -1,21 +1,20 @@
 package ru.snkatvit.springcourse;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) throws InterruptedException {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml");
-//        ClassicalMusic music = context.getBean("classicalMusic", ClassicalMusic.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        System.out.println(musicPlayer.getVolume());
-        System.out.println(musicPlayer.getName());
 
-        ClassicalMusic classicalMusic1 = context.getBean("classicalMusic", ClassicalMusic.class);
-        ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
-
-        System.out.println(classicalMusic1 == classicalMusic2);
+        musicPlayer.playMusic();
+        musicPlayer.playMusic();
+        musicPlayer.playMusic();
+        musicPlayer.playMusic();
+        musicPlayer.playMusic();
+        musicPlayer.playMusic();
 
         context.close();
 
